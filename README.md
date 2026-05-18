@@ -1,7 +1,10 @@
 # Final-Project-PROGDAS
 
-Judul: Sistem Monitoring Stress Pengendara
-Tujuan: Sistem ini dibuat untuk mencegah insiden road-rage di jalan raya
+## Judul
+Sistem Monitoring Stress Pengendara
+
+## Tujuan
+Sistem ini dibuat untuk mencegah insiden road-rage di jalan raya
 
 ## Anggota Kelompok 2:
 | NPM            | Nama                            | Username GITHUB |
