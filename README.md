@@ -14,8 +14,8 @@ Sistem ini dibuat untuk mencegah insiden road-rage di jalan raya
 | 2506611736     | Jeremi Natama Simanjuntak       | Loafietheman    |
 
 ## Rubik Penilaian
-![Rubik Penilaian](https://hackmd.io/_uploads/r1X0WYd1fx.png)
-![Rubik Penilaian](https://hackmd.io/_uploads/HyVbztOJfg.png)
+![Page 1](https://github.com/user-attachments/assets/7b519984-ff03-4bb7-b787-620388d206c6)
+![Page 2](https://github.com/user-attachments/assets/4d19a2ce-37da-424b-84b0-35daa9526348)
 
 ## Ketentuan
 Submission is through EMAS with the following file:
