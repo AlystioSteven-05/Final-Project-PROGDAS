@@ -7,11 +7,11 @@ Sistem Monitoring Stress Pengendara
 Sistem ini dibuat untuk mencegah insiden road-rage di jalan raya
 
 ## Anggota Kelompok 2:
-| NPM            | Nama                            | Username GITHUB |
-| -------------- | ------------------------------- | --------------- |
-| 2506535140     | Alystio Steven Xiang            | AlystioSteven-05|
-| 2506593525     | Benedict Jaysen Riofo Panjaitan | ZFrees          |
-| 2506611736     | Jeremi Natama Simanjuntak       | Loafietheman    |
+| NPM            | Nama                            | Username GITHUB  |
+| -------------- | ------------------------------- | ---------------- |
+| 2506535140     | Alystio Steven Xiang            | AlystioSteven-05 |
+| 2506593525     | Benedict Jaysen Riofo Panjaitan | ZFrees           |
+| 2506611736     | Jeremi Natama Simanjuntak       | Loafietheman     |
 
 ## Rubik Penilaian
 ![Page 1](https://github.com/user-attachments/assets/7b519984-ff03-4bb7-b787-620388d206c6)
@@ -37,3 +37,39 @@ Submission is through EMAS with the following file:
 - Screen capture of the running program (not the code), for all cases.
 
 ## Parametrix yang digunakan
+**1. Vital Signs**
+| Kondisi        | Heart Rate (BPM)                | Tensi (Sistolik) |
+| -------------- | ------------------------------- | ---------------- |
+| Rileks         | 60 - 80                         | < 120 mmHg       |
+| Waspada        | 81 - 100                        | 120 - 129 mmHg   |
+| Stress Tinggi  | > 100                           | >= 130 mmHg      |
+
+**2. Keringat(GSR)**
+| Kondisi        | microSiemens (µS)               |
+| -------------- | ------------------------------- |
+| Normal         | < 5 µS                          | 
+| Tegang         | 5 - 10 µS                       | 
+| Stress         | > 10 µS                         | 
+
+**3. Respiration Rate**
+| Kondisi            | Breaths Per Minute(brpm)        |
+| ------------------ | ------------------------------- |
+| Normal/Rileks      | 12 - 20 brpm                    | 
+| Tegang/Napas Cepat | 21 - 25 brpm                    | 
+| Emosi/Napas Pendek | > 25 brpm                       | 
+
+**4. Lama Berkendara**
+| Kondisi               | Lama Berkendara (menit)         |
+| --------------------- | ------------------------------- |
+| Baru berkendara       | < 60 Menit                      | 
+| Masuk fase jenuh      | 60 - 119 Menit                  | 
+| Rawan krisis kognitif | >= 120 Menit nonstop            | 
+
+**5. Suhu Lingkungan**
+| Kondisi               | Temperature (Celcius)           |
+| --------------------- | ------------------------------- |
+| Sejuk / Optimal       | 20 - 25 Celcius                 | 
+| Agak Panas            | 26 - 29 Celcius                 | 
+| Panas Memicu Emosi    | >= 30 Celcius                   | 
+
+## Jobs Decs
