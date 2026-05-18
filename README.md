@@ -78,11 +78,11 @@ Submission is through EMAS with the following file:
 3. Jeremi Natama Simanjuntak
 
 ## Referensi
-**1. Acuan Heart Rate & Keringat (GSR)**
+1. Acuan Heart Rate & Keringat (GSR)
    Healey, J. A., & Picard, R. W. (2005). Detecting Stress During Real-World Driving Tasks Using Physiological Sensors. IEEE Transactions on Intelligent Transportation Systems.
-**2. Acuan Suhu Lingkungan**
+2. Acuan Suhu Lingkungan
    Daanen, H. A. M., dkk. (2003). Driving performance in cold, warm, and thermoneutral environments. Applied Ergonomics.
-**3. Respirasi & Napas Pendek**
+3. Respirasi & Napas Pendek
    Wilhelm, F. H., Gevirtz, R., & Roth, W. T. (2001). Respiratory dysregulation in anxiety, functional cardiac, and pain disorders. Behavior Modification.
-**4. Acuan Durasi Berkendara**
+4. Acuan Durasi Berkendara
    Kementerian Kesehatan Republik Indonesia. (2020). Pedoman Kesehatan Keselamatan Berkendara
