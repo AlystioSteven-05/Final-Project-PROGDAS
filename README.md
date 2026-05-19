@@ -72,10 +72,98 @@ Submission is through EMAS with the following file:
 | Agak Panas            | 26 - 29 Celcius                 | 
 | Panas Memicu Emosi    | >= 30 Celcius                   | 
 
-## Jobs Decs
-1. Alystio Steven Xiang
-2. Benedict Jaysen Riofo Panjaitan
-3. Jeremi Natama Simanjuntak
+## Jobs Desc
+|           Nama             |            Peran           |
+| -------------------------  | -------------------------- |
+| Alystio Steven Xiang       | Arsitektur program, logika evaluasi parameter fisiologis (Heart Rate, Tekanan Darah, GSR) |
+| Benedict Jaysen Riofo Panjaitan | Logika evaluasi pernapasan & durasi, kalkulasi skor total & klasifikasi stress |
+| Jeremi Natama Simanjuntak  | Evaluasi suhu lingkungan, tampilan hasil, sistem rekomendasi, validasi input, dokumentasi |
+
+## Workflow Program
+```mermaid
+---
+config:
+  layout: elk
+  theme: neo
+  look: neo
+---
+flowchart TD
+    subgraph subGraphMain["Main Program"]
+        A(["Start"]) --> B["int repeat = 1"]
+        B --> C["printHeader()"]
+        C --> D{"while (repeat)"}
+        
+        %% Alur di dalam Loop
+        D -- Ya --> E["data = inputSensorData()"]
+        E --> F["result = calculateStress(data)"]
+        F --> G["displayResult(data, result)"]
+        G --> H["printRecommendation(result)"]
+        H --> I["repeat = askRepeat()"]
+        I --> D
+        
+        %% Keluar dari Loop
+        D -- Tidak --> J[/"Tampilkan pesan Terima Kasih & Safe Driving"/]
+        J --> K["printSeparator()"]
+        K --> L(["End (Return 0)"])
+    end
+    subgraph subGraphInput["Fungsi: inputSensorData"]
+        In1[/"Print: INPUT DATA SENSOR"/] --> In2[/"Input: Heart Rate (BPM)"/]
+        In2 --> In2a{"Valid?\n(Angka & > 0)"}
+        In2a -- Tidak --> In2
+        
+        In2a -- Ya --> In3[/"Input: Tekanan Darah (Sistolik)"/]
+        In3 --> In3a{"Valid?\n(Angka & > 0)"}
+        In3a -- Tidak --> In3
+        
+        In3a -- Ya --> In4[/"Input: GSR (µS)"/]
+        In4 --> In4a{"Valid?\n(Angka & >= 0)"}
+        In4a -- Tidak --> In4
+        
+        In4a -- Ya --> In5[/"Input: Frekuensi Pernapasan"/]
+        In5 --> In5a{"Valid?\n(Angka & > 0)"}
+        In5a -- Tidak --> In5
+        
+        In5a -- Ya --> In6[/"Input: Durasi Berkendara (menit)"/]
+        In6 --> In6a{"Valid?\n(Angka & >= 0)"}
+        In6a -- Tidak --> In6
+        
+        In6a -- Ya --> In7[/"Input: Suhu Lingkungan (Celsius)"/]
+        In7 --> In7a{"Valid?\n(Angka)"}
+        In7a -- Tidak --> In7
+        
+        In7a -- Ya --> InOut["Return data (SensorData)"]
+    end
+    subgraph subGraphCalc["Fungsi: calculateStress"]
+        Calc1["Evaluasi Parameter:\n1. evaluateHeartRate()\n2. evaluateSystolic()\n3. evaluateGSR()\n4. evaluateRespiration()\n5. evaluateDuration()\n6. evaluateTemperature()"]
+        
+        Calc1 --> Calc2["Hitung total_score =\nPenjumlahan semua skor parameter (6-18)"]
+        
+        Calc2 --> Calc3{"Apakah\ntotal_score <= 8?"}
+        
+        Calc3 -- Ya --> CalcStatus1["Level: RILEKS\nSet rekomendasi aman"]
+        
+        Calc3 -- Tidak --> Calc4{"Apakah\ntotal_score <= 13?"}
+        Calc4 -- Ya --> CalcStatus2["Level: WASPADA\nSet rekomendasi istirahat di rest area"]
+        Calc4 -- Tidak --> CalcStatus3["Level: STRES TINGGI\nSet rekomendasi SEGERA BERHENTI!"]
+        
+        CalcStatus1 --> CalcOut["Return result (StressResult)"]
+        CalcStatus2 --> CalcOut
+        CalcStatus3 --> CalcOut
+    end
+    subgraph subGraphDisplay["Fungsi: displayResult & printRecommendation"]
+        Disp1["Petakan teks status berdasarkan skor\n(level_hr, level_bp, level_gsr, dll)"]
+        Disp1 --> Disp2[/"Tampilkan Tabel Hasil Evaluasi Parameter\ndan TOTAL SKOR ke layar"/]
+        Disp2 --> Disp3[/"Tampilkan REKOMENDASI\nberdasarkan tingkat stres"/]
+    end
+    E -.-> In1
+    InOut -.-> F
+    
+    F -.-> Calc1
+    CalcOut -.-> G
+    
+    G -.-> Disp1
+    Disp3 -.-> H
+```
 
 ## Referensi
 1. Acuan Heart Rate & Keringat (GSR)
