@@ -309,7 +309,7 @@ void printRecommendation(StressResult result) {
 int askRepeat(void) {
     char choice;
     printf("\n  Lakukan pengukuran ulang? (y/n): ");
-    while (getchar() != '\n'); /* flush buffer */
+    while (getchar() != '\n'); // flush buffer
     scanf("%c", &choice);
     return (choice == 'y' || choice == 'Y') ? 1 : 0;
 }
