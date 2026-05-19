@@ -43,7 +43,7 @@ int         askRepeat(void);
 
 // MAIN PROGRAM
 
-int main(void) {
+int main() {
     int repeat = 1;
 
     printHeader();
@@ -64,7 +64,7 @@ int main(void) {
 }
 
 // PRINT HEADER
-
+/* Menampilkan header program ke layar */
 void printHeader(void) {
     printf("\n");
     printf("  ============================================================\n");
@@ -74,12 +74,13 @@ void printHeader(void) {
     printf("  ============================================================\n");
 }
 
+/* Menampilkan garis pemisah */
 void printSeparator(void) {
     printf("  ============================================================\n");
 }
 
 // INPUT DATA
-
+/* Meminta dan memvalidasi input 6 parameter sensor dari pengguna */
 SensorData inputSensorData(void) {
     SensorData data;
 
@@ -127,7 +128,7 @@ SensorData inputSensorData(void) {
 }
 
 // EVALUATE HEART RATE
-// Return: 1=Rileks, 2=Waspada, 3=Stres Tinggi
+/* Return: 1=Rileks, 2=Waspada, 3=Stres Tinggi */
 
 int evaluateHeartRate(int bpm) {
     if (bpm >= 60 && bpm <= 80)
@@ -141,7 +142,7 @@ int evaluateHeartRate(int bpm) {
 }
 
 // EVALUATE SYSTOLIC BLOOD PRESSURE
-// Return: 1=Normal, 2=Waspada, 3=Tinggi
+/* Return: 1=Normal, 2=Waspada, 3=Tinggi */
 
 int evaluateSystolic(int systolic) {
     if (systolic < 120)
@@ -153,7 +154,7 @@ int evaluateSystolic(int systolic) {
 }
 
 // EVALUATE GSR (Galvanic Skin Response)
-// Return: 1=Normal, 2=Tegang, 3=Stres Tinggi
+/* Return: 1=Normal, 2=Tegang, 3=Stres Tinggi */
 
 int evaluateGSR(float gsr) {
     if (gsr < 5.0f)
@@ -165,7 +166,7 @@ int evaluateGSR(float gsr) {
 }
 
 // EVALUATE RESPIRATION RATE
-// Return: 1=Normal, 2=Waspada, 3=Stres Tinggi
+/* Return: 1=Normal, 2=Waspada, 3=Stres Tinggi */
 
 int evaluateRespiration(int rr) {
     if (rr >= 12 && rr <= 20)
@@ -179,7 +180,7 @@ int evaluateRespiration(int rr) {
 }
 
 // EVALUATE DRIVE DURATION
-// Return: 1=Aman, 2=Jenuh, 3=Rawan Krisis
+/* Return: 1=Aman, 2=Jenuh, 3=Rawan Krisis */
 
 int evaluateDuration(int duration) {
     if (duration < 60)
@@ -191,7 +192,7 @@ int evaluateDuration(int duration) {
 }
 
 // EVALUATE TEMPERATURE
-// Return: 1=Sejuk, 2=Agak Panas, 3=Panas
+/* Return: 1=Sejuk, 2=Agak Panas, 3=Panas */
 
 int evaluateTemperature(float temp) {
     if (temp >= 20.0f && temp <= 25.0f)
@@ -203,7 +204,7 @@ int evaluateTemperature(float temp) {
 }
 
 // CALCULATE STRESS LEVEL
-// Menghitung skor total dan menentukan tingkat stress
+/* Menghitung skor total dan menentukan tingkat stress */
 
 StressResult calculateStress(SensorData data) {
     StressResult result;
@@ -243,7 +244,7 @@ StressResult calculateStress(SensorData data) {
 }
 
 // DISPLAY RESULT
-// Menampilkan hasil evaluasi setiap parameter
+/* Menampilkan hasil evaluasi setiap parameter */
 
 void displayResult(SensorData data, StressResult result) {
     char *level_hr[]   = {"", "Rileks (60-80 BPM)", "Waspada (81-100 BPM)", "Stres Tinggi (>100 BPM)"};
@@ -293,7 +294,7 @@ void displayResult(SensorData data, StressResult result) {
 }
 
 // PRINT RECOMMENDATION
-// Menampilkan rekomendasi berdasarkan tingkat stres
+/* Menampilkan rekomendasi berdasarkan tingkat stres */
 
 void printRecommendation(StressResult result) {
     printf("  ------------------------------------------------------------\n");
@@ -303,8 +304,8 @@ void printRecommendation(StressResult result) {
 }
 
 // ASK REPEAT
-// Menanyakan apakah pengguna ingin melakukan pengukuran ulang
-// Return: 1=Ya, 0=Tidak
+/* Menanyakan apakah pengguna ingin melakukan pengukuran ulang */
+/* Return: 1=Ya, 0=Tidak */
 
 int askRepeat(void) {
     char choice;
